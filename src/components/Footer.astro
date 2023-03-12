@@ -1,0 +1,14 @@
+---
+import { currentYear } from "../utils/helpers";
+
+const { links } = Astro.props;
+---
+
+<footer class="text-center text-sm mt-12">
+    <a href="/">GarikMe</a>
+    &copy; {currentYear()}{
+      links.map((link) => (
+        <div class="inline">&nbsp;<a href={link.url} target="_blank">{link.name}</a></dib>
+      ))
+    }
+</footer>

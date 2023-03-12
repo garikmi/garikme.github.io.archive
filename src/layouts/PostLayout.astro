@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDate, countWords } from "../utils/helpers";
+
+const { frontmatter, rawContent } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title} showLogo={false}>
+  <h1 class="text-cornflower-blue font-bold mt-20">
+    <a class="text-cadet-blue" href="/">..</a>/{frontmatter.title}
+  </h1>
+  <h3 class="text-cornflower-blue font-bold mt-2">
+    {formatDate(frontmatter.pubDate)}
+    •
+    {Math.round(countWords(rawContent()) / 220)} min
+  </h3>
+
+  {
+    frontmatter.tags.map((tag) => (
+      <h4 class="inline overflow-hidden text-shuttle-gray font-bold">{tag}</h4>
+    ))
+  }
+
+  <article class="mt-4">
+    <slot />
+  </article>
+</BaseLayout>

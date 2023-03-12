@@ -1,0 +1,31 @@
+---
+const allPosts = await Astro.glob("../pages/posts/*.md");
+function countTagPosts(tag) {
+    let count = 0;
+    allPosts.forEach((post) => {
+        if (post.frontmatter.tags.includes(tag)) {
+            count += 1;
+        }
+    });
+    return count;
+}
+
+const { tags } = Astro.props;
+---
+
+<div class="mt-12">
+    <h4 class="-m-3 text-center">
+        <span class="px-5 bg-woodsmoke">Categories</span>
+    </h4>
+    <div class="container text-center grid grid-cols-3">
+        {
+            tags.map((tag) => (
+                <span>
+                    <a href={`/tags/${tag}/`}>
+                        {tag}({countTagPosts(tag)})
+                    </a>
+                </span>
+            ))
+        }
+    </div>
+</div>

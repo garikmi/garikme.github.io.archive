@@ -1,0 +1,83 @@
+* {
+  @apply bg-woodsmoke;
+}
+
+html {
+  @apply font-monospace leading-normal;
+}
+
+body {
+  @apply text-cadet-blue p-6;
+}
+
+body a {
+  @apply inline-block hover:text-woodsmoke hover:bg-cornflower-blue;
+}
+
+body a:hover {
+  @apply text-woodsmoke bg-cornflower-blue;
+}
+
+body a:hover mark {
+  @apply text-woodsmoke bg-cornflower-blue font-bold;
+}
+
+body a:hover time {
+  @apply text-woodsmoke bg-cornflower-blue;
+}
+
+.container {
+  @apply border border-solid border-ghost rounded p-5;
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+article h1, h2 {
+  @apply text-cornflower-blue font-bold mt-4;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+h4 {
+  @apply text-base;
+}
+
+h5 {
+  @apply text-sm;
+}
+
+h6 {
+  @apply text-xs;
+}
+
+article p {
+  @apply mt-4;
+}
+
+article blockquote {
+  @apply mx-8;
+}
+
+article pre {
+  @apply my-2 p-2;
+}
+
+article pre code {
+  @apply m-0 p-0;
+}
+
+article pre code span {
+  @apply bg-bunker;
+}
+
+article code {
+  @apply bg-bunker p-1;
+}

@@ -1,0 +1,27 @@
+---
+import { formatDate } from "../utils/helpers";
+
+const { title, posts } = Astro.props;
+---
+
+<div class="mt-12">
+    <h4 class="-m-3 text-center">
+        <span class="px-5 bg-woodsmoke">{title == null ? "Posts" : title}</span>
+    </h4>
+    <div id="posts" class="container">
+        {
+            posts.map((post) => (
+                <a href={post.url}>
+                    {post.frontmatter.title} •
+                    <time>{formatDate(post.frontmatter.pubDate)}</time>
+                </a><br/>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    body a:hover mark {
+        @apply text-woodsmoke bg-cornflower-blue font-bold;
+    }
+</style>
