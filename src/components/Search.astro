@@ -1,10 +1,10 @@
 ---
+import Container from "./Container.astro";
+
+const title = "Search";
 ---
 
-<div class="mt-12">
-  <h4 id="search_title" class="-m-3 text-center">
-    <span class="px-5 bg-woodsmoke">Search</span>
-  </h4>
+<Container title={title}>
   <div id="search" class="container">
     <input
       id="search_input"
@@ -14,4 +14,4 @@
       name="name"
     />
   </div>
-</div>
+</Container>

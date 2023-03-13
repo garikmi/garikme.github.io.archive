@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Posts from "../../components/Posts.astro";
+import Container from "../../components/Container.astro";
+import { formatDate } from "../../utils/helpers";
 
 export async function getStaticPaths() {
   const allPosts = await Astro.glob("../posts/*.md");
@@ -27,5 +28,19 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <Posts title={tag} posts={posts} />
+  <Container title={tag}>
+    <div id="posts" class="container">
+      {
+        posts.map((post) => (
+          <>
+            <a href={post.url}>
+              {post.frontmatter.title} •
+              <time>{formatDate(post.frontmatter.pubDate)}</time>
+            </a>
+            <br />
+          </>
+        ))
+      }
+    </div>
+  </Container>
 </BaseLayout>

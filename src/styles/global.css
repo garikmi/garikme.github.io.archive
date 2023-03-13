@@ -14,6 +14,10 @@ body a {
   @apply inline-block hover:text-woodsmoke hover:bg-cornflower-blue;
 }
 
+body a:hover mark {
+  @apply text-woodsmoke bg-cornflower-blue font-bold;
+}
+
 body a:hover {
   @apply text-woodsmoke bg-cornflower-blue;
 }

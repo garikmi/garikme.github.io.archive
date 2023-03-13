@@ -5,12 +5,11 @@ import Posts from "../components/Posts.astro";
 import Categories from "../components/Categories.astro";
 import { substractDate } from "../utils/helpers";
 
-// const allPosts = await Astro.glob("./posts/*md")
 let orderedPosts = null;
 try {
   let allPosts = await Astro.glob("./posts/*.md");
   orderedPosts = allPosts.sort((a, b) =>
-    substractDate(b.frontmatter.pubDate, a.frontmatter.pubDate)
+    substractDate(a.frontmatter.pubDate, b.frontmatter.pubDate)
   );
 } catch (error) {}
 
