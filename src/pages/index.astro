@@ -39,14 +39,15 @@ const searchJSON = orderedPosts.map((post) => {
 
   <noscript>
     <style>
-      #search_title,
-      #search {
+      #search_block {
         display: none;
       }
     </style>
   </noscript>
 
-  <Search />
+  <div id="search_block">
+    <Search />
+  </div>
 
   {tags != null && <Posts posts={orderedPosts} />}
 
