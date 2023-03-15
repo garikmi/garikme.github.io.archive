@@ -1,4 +1,4 @@
-export function formatDate(date) {
+export const formatDate = (date) => {
   const newDate = new Date(date);
   newDate.setHours(newDate.getHours() + 24);
 
@@ -7,9 +7,9 @@ export function formatDate(date) {
     month: "long",
     day: "numeric",
   });
-}
+};
 
-export function substractDate(a, b) {
+export const substractDate = (a, b) => {
   a = new Date(a);
   a.setHours(a.getHours() + 24);
 
@@ -17,14 +17,16 @@ export function substractDate(a, b) {
   b.setHours(b.getHours() + 24);
 
   return b - a;
-}
+};
 
-export function currentYear() {
+export const currentYear = () => {
   return new Date().toLocaleDateString("en-US", {
     year: "numeric",
   });
-}
+};
 
-export function countWords(val) {
-  return val.split(" ").length;
-}
+export const countWords = (val) => {
+  return val.split(' ')
+    .filter((n) => { return n != "" })
+    .length;
+};
